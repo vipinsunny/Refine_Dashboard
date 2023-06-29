@@ -75,7 +75,7 @@ const createProperty = async (req, res) => {
             email,
         } = req.body;
 
-        const session = await mongoose.startSession();
+        const session =  await mongoose.startSession();
         session.startTransaction();
 
         const user = await User.findOne({ email }).session(session);
